@@ -1,27 +1,35 @@
-#include <stdio.h>
-
-int main() 
+#include<stdio.h>
+int fun(int n)
 {
-    int n,i,p=0;
-
-    printf("Enter a number ");
-    scanf("%d", &n);
-    for(i=1;i<=n;i++)
-    {
-        if(n%i==0)
-        p=p+1;
-
-    }
-    if(p==2)
-     {
-
-     printf("\n%d is prime number",n);
-     
-     }
-     else{
-        printf("\n%d is not prime number",n);
-     
-     }
-
-    return 0;
+	int i,c;
+	c=0;
+static	int p[10];
+	if(n==0)
+	{
+		return p[10];
+	}
+	for(i=1;i<=n;i++)
+	{
+		if(n%i==0)
+		{
+			c++;
+			
+		}
+	}
+	if(c==2||c==1)
+	{
+		
+		p[i]=n;
+	//	printf("%d",n);
+	}
+	return fun(n-1);
+}
+int main()
+{
+	int n;
+	printf("Enter a number");
+	scanf("%d",&n);
+ int x=fun(n);
+printf("%d",x);
+	return 0;
 }
